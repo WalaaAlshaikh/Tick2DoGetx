@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:get/get.dart';
-import 'package:todo_getx/ui/home_screen.dart';
-import 'package:todo_getx/ui/todo_screen.dart';
+import 'package:tick_2do_getx/views/home.dart';
+import 'package:tick_2do_getx/views/task_view.dart';
+
 
 void main() async {
   await GetStorage.init();
