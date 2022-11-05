@@ -11,13 +11,13 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  static const String title = 'Getx Todo';
+  static const String title = 'Tick2Do';
 
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: ThemeData(primarySwatch: Colors.deepOrange),
+      theme: ThemeData(primarySwatch: Colors.cyan),
       title: title,
       debugShowCheckedModeBanner: false,
       initialRoute: HomeScreen.id,

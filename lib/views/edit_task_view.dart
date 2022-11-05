@@ -13,12 +13,12 @@ class TodoEdit extends StatelessWidget {
     final TextEditingController textEditingController =
     TextEditingController(text: todoController.todos[index!].task);
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(40),
-        child: Column(
-          children: [
-            Expanded(
-              child: TextField(
+      body: SafeArea(
+        child: Container(
+          padding: const EdgeInsets.only(top: 50,left: 10,right: 10),
+          child: Column(
+            children: [
+              TextField(
                 // textAlign: TextAlign.center,
                 decoration: const InputDecoration(
                   hintText: "What do you want to accomplish?",
@@ -29,38 +29,43 @@ class TodoEdit extends StatelessWidget {
                   fontSize: 25.0,
                 ),
                 keyboardType: TextInputType.multiline,
-                maxLines: 10,
-                autofocus: true,
+                maxLines: 5,
+
                 controller: textEditingController,
+
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                // ignore: deprecated_member_use
-                RaisedButton(
-                  child: const Text('Cancel'),
-                  color: Colors.red,
-                  textColor: Colors.white,
-                  onPressed: () {
-                    Get.back();
-                  },
-                ),
-                // ignore: deprecated_member_use
-                RaisedButton(
-                  child: const Text('Update'),
-                  color: Colors.green,
-                  textColor: Colors.white,
-                  onPressed: () {
-                    var editing = todoController.todos[index!];
-                    editing.task = textEditingController.text;
-                    todoController.todos[index!] = editing;
-                    Get.back();
-                  },
-                ),
-              ],
-            ),
-          ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  // ignore: deprecated_member_use
+                  ElevatedButton(
+                    child: const Text('Cancel'),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                        padding:  EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                        textStyle: const TextStyle(color: Colors.white)),
+                    onPressed: () {
+                      Get.back();
+                    },
+                  ),
+                  // ignore: deprecated_member_use
+                  ElevatedButton(
+                    child: const Text('Update'),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        padding:  EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                        textStyle: const TextStyle(color: Colors.white)),
+                    onPressed: () {
+                      var editing = todoController.todos[index!];
+                      editing.task = textEditingController.text;
+                      todoController.todos[index!] = editing;
+                      Get.back();
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
