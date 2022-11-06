@@ -60,9 +60,9 @@ class HomeScreen extends StatelessWidget {
               ),
               leading: Checkbox(
                 value: todoController.todos[index].done,
-                onChanged: (neWvalue) {
+                onChanged: (newValue) {
                   var todo = todoController.todos[index];
-                  todo.done = neWvalue!;
+                  todo.done = newValue!;
                   todoController.todos[index] = todo;
                 },
               ),

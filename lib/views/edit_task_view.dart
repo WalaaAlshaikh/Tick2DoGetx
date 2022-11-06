@@ -21,7 +21,7 @@ class TodoEdit extends StatelessWidget {
               TextField(
                 // textAlign: TextAlign.center,
                 decoration: const InputDecoration(
-                  hintText: "What do you want to accomplish?",
+                  hintText: "What's your task?",
                   border: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
